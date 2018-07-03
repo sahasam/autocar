@@ -1,4 +1,16 @@
 #!/usr/local/bin/python
+'''
+this programs is for using capacitors to measure fill/discharge time to determine
+brightness of the ldr
+
+I used this initially, but it was hard to establish interrupts with this specific
+circuit.
+
+As a result, I moved to using a potentiometer to set up a voltage divider and use
+that as a more accurate determinant of light/dark.
+
+Look at demos/potentiometer.py for more final-project-accurate code
+'''
 
 import RPi.GPIO as GPIO
 import time
@@ -8,6 +20,7 @@ GPIO.setmode(GPIO.BOARD)
 circuit_pin = 7
 
 def rc_time (circuit_pin):
+    starttime = time.clock()
     count = 0
 
     GPIO.setup(circuit_pin, GPIO.OUT)
@@ -19,10 +32,10 @@ def rc_time (circuit_pin):
 
     while(GPIO.input(circuit_pin) == GPIO.LOW):
         count += 1
-
+    print(time.clock() - starttime)
     return count
 
-cutoff = 700
+cutoff = 600 
 def translate (value):
     if(value < cutoff):
         return 1
