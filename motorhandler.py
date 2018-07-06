@@ -20,16 +20,16 @@ GPIO.setup(pinBIN1, GPIO.OUT) # Connected to BIN1
 GPIO.setup(pinBIN2, GPIO.OUT) # Connected to BIN2
 GPIO.setup(pinPWMB, GPIO.OUT) # Connected to PWMB
 
-
+print("Motors Initialized")
 
 #Motor functions: forward, backward, left, and right
-def forwardDrive():
+def backwardDrive():
     GPIO.output(pinAIN1, GPIO.LOW)
     GPIO.output(pinAIN2, GPIO.HIGH)
     GPIO.output(pinSTBY, GPIO.HIGH)
     GPIO.output(pinPWMA, GPIO.HIGH)
 
-def backwardDrive():
+def forwardDrive():
     GPIO.output(pinAIN2, GPIO.LOW)
     GPIO.output(pinAIN1, GPIO.HIGH)
     GPIO.output(pinSTBY, GPIO.HIGH)

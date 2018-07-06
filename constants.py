@@ -1,5 +1,6 @@
-#constants for the code
-
+'''
+This file stores the constants used by (a) file(s)
+'''
 #ldrhandler.py
 LDR_CUTOFF = 700 #Cutoff limit that determines if LDR output is 1 or 0
 LDR_PIN = 7 #Pin to which LDR output is connected 
