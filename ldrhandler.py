@@ -19,7 +19,7 @@ GPIO.setmode(GPIO.BOARD)
 #whenever the event is triggered, the kernel calls this function
 def ldrEvent(channel):
     #increment distance by 1/5 of wheel circumference
-    constants.distance+=2*math.pi*constants.WHEEL_RADIUS/60
+    constants.distance+=2*math.pi*constants.WHEEL_RADIUS/48
     print('distance: %.2d',constants.distance)
 
 #establish interrupts

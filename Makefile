@@ -8,3 +8,6 @@ clean:
 
 main:
 	-exec sudo python main.py
+
+path:
+	-exec sudo python pathfinder.py

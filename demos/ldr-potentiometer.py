@@ -20,6 +20,5 @@ try:
     while True: 
         #all it does is print the input for circuit pin
         print(GPIO.input(circuit_pin))
-        time.sleep(0.001)
 except KeyboardInterrupt:
     GPIO.cleanup()
